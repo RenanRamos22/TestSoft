@@ -8,20 +8,23 @@ import java.util.Scanner;
 public class Calcula {
 
 	/*Declaraçãoo dos métodos*/  
-	public int escolha(int opc){
+	public int escolha(){
 		Scanner input1 = new Scanner(System.in);
-
+		int opc;
+		
 		System.out.println("");
-		System.out.println("-Escolha uma op��o-");  
+		System.out.println("-Escolha uma opção-");  
 		System.out.println("1. Soma");    
 		System.out.println("2. Subtracao");    
 		System.out.println("3. Multiplicacao");    
 		System.out.println("4. Divisao");
 		System.out.println("5. Potenciação");
+		System.out.println("6. Raiz Quadrada");
+		System.out.println("7. Bhaskara");
 		System.out.println("0. Sair");    
-		System.out.println("Opera��o: ");   
+		System.out.println("Operação: ");   
 
-		return opc = input1.nextInt();
+		return  opc = input1.nextInt();
 	}
 
 	public int som(int num1, int num2) {
@@ -42,6 +45,12 @@ public class Calcula {
 	public double pot(int num1, int num2){
 		return Math.pow(num1, num2);
 	} 
+	public double raiz(int num1) {
+		return Math.sqrt(num1);	
+	}
+	public void bhask() {
+		 new Delta();	
+	}
 
 	// --------------- Metodo principal
 	public static void main (String args[]){ 
@@ -55,7 +64,7 @@ public class Calcula {
 		int num2;  
 
 		Scanner input = new Scanner(System.in);
-		opcao = c.escolha(opcao);  
+		opcao = c.escolha();  
 
 		while (opcao != 0) {
 
@@ -76,7 +85,7 @@ public class Calcula {
 				System.out.printf("\nO resultado da soma é: %d\n", operacao);  
 				System.out.println("---------------------");
 
-				opcao = c.escolha(opcao);
+				opcao = c.escolha();
 			}  
 			//Opção subtração
 			else if (opcao == 2) { 
@@ -94,7 +103,7 @@ public class Calcula {
 				System.out.printf("\nO resultado da subtração é: %d\n", operacao); 
 				System.out.println("---------------------");
 
-				opcao = c.escolha(opcao);
+				opcao = c.escolha();
 			}  
 			//Op��o multiplica��o
 			else if (opcao == 3) {
@@ -109,10 +118,10 @@ public class Calcula {
 				num2 = input1.nextInt();
 
 				int operacao = c.mult(num1, num2); 
-				System.out.printf("\nO resultado da multiplica��o �: %d\n", operacao);   
+				System.out.printf("\nO resultado da multiplicação é: %d\n", operacao);   
 				System.out.println("---------------------");
 
-				opcao = c.escolha(opcao);
+				opcao = c.escolha();
 			}  
 
 			//Op��o divis�o
@@ -129,10 +138,10 @@ public class Calcula {
 
 				DecimalFormat sdf = new DecimalFormat("##0.00");
 				double operacao = c.div(num1, num2);  
-				System.out.println("O resultado da divis�o �:"+ sdf.format(operacao)); 
+				System.out.println("O resultado da divisão é:"+ sdf.format(operacao)); 
 				System.out.println("---------------------");
 
-				opcao = c.escolha(opcao);
+				opcao = c.escolha();
 			}  
 			else if (opcao == 5) {  
 				System.out.println("---------------------");
@@ -146,10 +155,32 @@ public class Calcula {
 				num2 = input1.nextInt();
 
 				double operacao = c.pot(num1, num2);  
-				System.out.println("O resultado da divis�o �:"+ operacao);   
+				System.out.println("O resultado é:"+ operacao);   
 				System.out.println("---------------------");
 
-				opcao = c.escolha(opcao);
+				opcao = c.escolha();
+			}  
+			else if (opcao == 6) {  
+				System.out.println("---------------------");
+				System.out.println("^^^ Raiz Quadrada:  ^^^");
+
+				//scanner para ler informação da tela
+				Scanner input1 = new Scanner(System.in);    
+				System.out.println("A Raiz quadrada de: ");  
+				num1 = input1.nextInt();  
+			
+
+				double operacao = c.raiz(num1);  
+				System.out.println("O resultado é:"+ operacao);   
+				System.out.println("---------------------");
+
+				opcao = c.escolha();
+			}  
+			else if (opcao == 7) {  
+				System.out.println("---------------------");
+				System.out.println("--- Bhaskara:  ---");
+
+				c.bhask();
 			}  
 			else{  
 				System.out.println("????");  
@@ -157,4 +188,6 @@ public class Calcula {
 			}      
 		} // fim do while - usuario optou por sair
 	}  // fim do metodo principal 
+
+	
 }
