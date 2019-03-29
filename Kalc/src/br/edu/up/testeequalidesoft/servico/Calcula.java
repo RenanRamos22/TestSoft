@@ -21,6 +21,7 @@ public class Calcula {
 		System.out.println("5. Potenciação");
 		System.out.println("6. Raiz Quadrada");
 		System.out.println("7. Bhaskara");
+		System.out.println("8. Perimetro de poligono");
 		System.out.println("0. Sair");    
 		System.out.println("Operação: ");   
 
@@ -50,6 +51,9 @@ public class Calcula {
 	}
 	public void bhask() {
 		 new Delta();	
+	}
+	public void periPoli() {
+		 new Perim();	
 	}
 
 	// --------------- Metodo principal
@@ -178,9 +182,15 @@ public class Calcula {
 			}  
 			else if (opcao == 7) {  
 				System.out.println("---------------------");
-				System.out.println("--- Bhaskara:  ---");
+				System.out.println("--- Bhaskara: ---");
 
 				c.bhask();
+			}  
+			else if (opcao == 8) {  
+				System.out.println("---------------------");
+				System.out.println("--- Perimetro de um Poligono ---");
+
+				new Perim();
 			}  
 			else{  
 				System.out.println("????");  
