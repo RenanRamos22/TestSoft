@@ -48,11 +48,11 @@ public class Calcula {
 	public double pot(int num1, int num2){
 		return Math.pow(num1, num2);
 	} 
-	public double raiz(int num1) {
+	public double raiz(double num1) {
 		return Math.sqrt(num1);	
 	}
 	public void bhask(int a, int b, int c) {
-		 new Delta(a,b,c);	
+		  new Delta(a,b,c);	
 	}
 	public void periPoli() {
 		 new Perim();	

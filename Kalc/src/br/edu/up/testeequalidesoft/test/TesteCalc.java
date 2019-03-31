@@ -15,6 +15,67 @@ public class TesteCalc {
 		deveriaSubtrair();
 		deveriaMultiplicar();
 		deveriaDividir();
+		deveriaCalcularUmNumElevadoaPotencia();
+		deveriaCalcularRaizQuadrada();
+		DeveriaCalcularEquacaoDoSegundoGrau();
+	}
+	
+	
+	private void DeveriaCalcularEquacaoDoSegundoGrau() {
+		// TODO Auto-generated method stub
+		
+			double result = 0;
+			Calcula c = new Calcula();
+			
+			try {
+				 
+			c.bhask(2, 2, 2);
+				 
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			
+			System.out.println("resultado da Potenciação: "+ result);
+			assertEquals(true, result == 4);
+	}
+
+
+	private void deveriaCalcularRaizQuadrada() {
+		// TODO Auto-generated method stub
+		double result = 0;
+		Calcula c = new Calcula();
+		
+		try {
+			 
+			 result = c.raiz(4);
+			 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		double compara = result*result;
+		System.out.println("resultado da divisão é: "+ result);
+		assertEquals(true, compara == 4);
+	}
+
+	private void deveriaCalcularUmNumElevadoaPotencia() {
+		// TODO Auto-generated method stub
+		double result = 0;
+		Calcula c = new Calcula();
+		
+		try {
+			 
+			 result = c.pot(2, 2);
+			 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		System.out.println("resultado da Potenciação: "+ result);
+		assertEquals(true, result == 4);
 	}
 
 	private void deveriaDividir() {
