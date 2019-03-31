@@ -16,6 +16,19 @@ public class Perim {
 		
 		qtdLados = 0;
 		lerLados();
+		somaPerim();
+		return;
+	}
+
+	private void somaPerim() {
+		// TODO Auto-generated method stub
+		
+		for(double lado : lados) {
+			perimetro += lado;
+		}
+		
+		System.out.println("O Perimetro é igual a:"+ perimetro);
+	
 		
 	}
 

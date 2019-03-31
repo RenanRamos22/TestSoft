@@ -22,6 +22,7 @@ public class Calcula {
 		System.out.println("6. Raiz Quadrada");
 		System.out.println("7. Bhaskara");
 		System.out.println("8. Perimetro de poligono");
+		System.out.println("9. hipotenusa de triángulo rectángulo");
 		System.out.println("0. Sair");    
 		System.out.println("Operação: ");   
 
@@ -34,8 +35,9 @@ public class Calcula {
 	public int sub(int num1, int num2){
 		return num1 - num2;
 	}  
-	public double div(int num1,int num2){
-		return num1 / num2;
+	public double div(double num1,double num2){
+		 double result = (num1 / num2);
+		 return result;
 	}  
 	public int mult(int num1, int num2){
 		return num1 * num2;
@@ -49,155 +51,178 @@ public class Calcula {
 	public double raiz(int num1) {
 		return Math.sqrt(num1);	
 	}
-	public void bhask() {
-		 new Delta();	
+	public void bhask(int a, int b, int c) {
+		 new Delta(a,b,c);	
 	}
 	public void periPoli() {
 		 new Perim();	
+	}
+	
+	private double hip(int num1, int num2) {
+		
+		return Math.hypot(num1,num2);
 	}
 
 	// --------------- Metodo principal
 	public static void main (String args[]){ 
 
 		//criando um objeto c a apartir do metodo calc  
-		Calcula c = new Calcula();  
+		Calcula calcula = new Calcula();  
 
 		//declarando as var�aveis  
-		int opcao = 6546949;  
+		int opcao;  
 		int num1;  
 		int num2;  
 
 		Scanner input = new Scanner(System.in);
-		opcao = c.escolha();  
+		opcao = calcula.escolha();  
 
 		while (opcao != 0) {
-
+			
 
 			//Opção soma
 			if ( opcao == 1 ) {
 				System.out.println("--------------");
 				System.out.println("+++ SOMA:  +++");
 
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
+			  
 				System.out.println("Qual o primeiro numero: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 				System.out.println("Qual o segundo numero: ");  
-				num2 = input1.nextInt();
+				num2 = input.nextInt();
 
-				int operacao = c.som(num1, num2);
+				int operacao = calcula.som(num1, num2);
 				System.out.printf("\nO resultado da soma é: %d\n", operacao);  
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
+				
 			}  
 			//Opção subtração
 			else if (opcao == 2) { 
 				System.out.println("-------------------");
 				System.out.println("--- SUBTRACAO:  ---");
 
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
+				   
 				System.out.println("Qual o primeiro numero: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 				System.out.println("Qual o segundo numero: ");  
-				num2 = input1.nextInt();
+				num2 = input.nextInt();
 
-				int operacao = c.sub(num1, num2);
+				int operacao = calcula.sub(num1, num2);
 				System.out.printf("\nO resultado da subtração é: %d\n", operacao); 
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
 			}  
 			//Op��o multiplica��o
 			else if (opcao == 3) {
 				System.out.println("-----------------------");
 				System.out.println("*** MULTIPLICACAO:  ***");
 
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
 				System.out.println("Qual o primeiro numero: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 				System.out.println("Qual o segundo numero: ");  
-				num2 = input1.nextInt();
+				num2 = input.nextInt();
 
-				int operacao = c.mult(num1, num2); 
+				int operacao = calcula.mult(num1, num2); 
 				System.out.printf("\nO resultado da multiplicação é: %d\n", operacao);   
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
 			}  
 
 			//Op��o divis�o
 			else if (opcao == 4) { 
 				System.out.println("-----------------");
 				System.out.println("/// DIVISAO:  ///");
-
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
+  
 				System.out.println("Qual o primeiro numero: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 				System.out.println("Qual o segundo numero: ");  
-				num2 = input1.nextInt();
+				num2 = input.nextInt();
 
-				DecimalFormat sdf = new DecimalFormat("##0.00");
-				double operacao = c.div(num1, num2);  
-				System.out.println("O resultado da divisão é:"+ sdf.format(operacao)); 
+				
+				double operacao = calcula.div(num1, num2);  
+				System.out.println("O resultado da divisão é:"+ operacao); 
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
 			}  
 			else if (opcao == 5) {  
 				System.out.println("---------------------");
 				System.out.println("^^^ POTENCIACAO:  ^^^");
 
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
+				//scanner para ler informação da tela    
 				System.out.println("Qual o primeiro numero: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 				System.out.println("Qual o segundo numero: ");  
-				num2 = input1.nextInt();
+				num2 = input.nextInt();
 
-				double operacao = c.pot(num1, num2);  
+				double operacao = calcula.pot(num1, num2);  
 				System.out.println("O resultado é:"+ operacao);   
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
 			}  
 			else if (opcao == 6) {  
 				System.out.println("---------------------");
 				System.out.println("^^^ Raiz Quadrada:  ^^^");
-
-				//scanner para ler informação da tela
-				Scanner input1 = new Scanner(System.in);    
+ 
 				System.out.println("A Raiz quadrada de: ");  
-				num1 = input1.nextInt();  
+				num1 = input.nextInt();  
 			
 
-				double operacao = c.raiz(num1);  
+				double operacao = calcula.raiz(num1);  
 				System.out.println("O resultado é:"+ operacao);   
 				System.out.println("---------------------");
 
-				opcao = c.escolha();
+				opcao = calcula.escolha();
 			}  
 			else if (opcao == 7) {  
 				System.out.println("---------------------");
 				System.out.println("--- Bhaskara: ---");
+				System.out.println("Digite o valor de A, B e C respectivamente: ");
+		       int a = Integer.parseInt(input.next());
+		       int b = Integer.parseInt(input.next());
+		       int c = Integer.parseInt(input.next());
 
-				c.bhask();
+		       calcula.bhask(a,b,c);
+				opcao = calcula.escolha();
 			}  
 			else if (opcao == 8) {  
 				System.out.println("---------------------");
 				System.out.println("--- Perimetro de um Poligono ---");
 
 				new Perim();
+				opcao = calcula.escolha();
 			}  
+			else if (opcao == 9) {  
+				System.out.println("---------------------");
+				System.out.println("--- Hipotenusa Trinagulo retangulo ---");
+				System.out.println("Digite o Primeiro Cateto:");
+				num1 = input.nextInt();
+				
+				System.out.println("Digite o Segundo Cateto:");
+				num2 = input.nextInt();
+				
+				double hipotenusa = calcula.hip(num1,num2);
+				
+				System.out.println("A Hipotenusa é igual a:"+ hipotenusa);
+				
+				opcao = calcula.escolha();
+			} 
 			else{  
-				System.out.println("????");  
-				break;
+				System.out.println("escolha uma opção entre 1 e 9");  
+				opcao = calcula.escolha();
 			}      
 		} // fim do while - usuario optou por sair
+		System.out.println("Adeus!");
 	}  // fim do metodo principal 
+
+	
+
+	
 
 	
 }

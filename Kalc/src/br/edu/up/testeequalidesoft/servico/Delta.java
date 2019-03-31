@@ -7,35 +7,33 @@ public class Delta {
 	 
 	 Calcula cal = new Calcula();
 	 
-	    int a, b, c;
+	   
 	    double delta, x1, x2;
 	 
-	    public Delta() {
-	        deltaCalculo();
+	    public Delta(int a, int b, int c) {
+	        deltaCalculo(a,b,c);
+	        return;
 	    }
 
-		private void deltaCalculo() {
+		private void deltaCalculo(int a, int b, int c) {
 			
-			System.out.println("Digite o valor de A, B e C respectivamente: ");
-	        a = Integer.parseInt(read.next());
-	        b = Integer.parseInt(read.next());
-	        c = Integer.parseInt(read.next());
+			
 	 
 	        delta = (b * b) + (-4 * (a * c));
 	 
 	        System.out.println("Delta: " + delta);
 	 
 	        if (delta >= 0) {
-	            calculaX();
+	            calculaX(a,b,c);
 	        } else {
 	            System.out.println("Delta não possui raiz!");
 	            //System.exit(0);
-	            cal.escolha();
+	            
 	        }
 			
 		}
 
-		private void calculaX() {
+		private void calculaX(int a, int b, int c) {
 			x1 = (double) ((-(b) + Math.sqrt(delta)) / 2 * a);
 	        x2 = (double) ((-(b) - Math.sqrt(delta)) / 2 * a);
 	 
