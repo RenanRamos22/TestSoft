@@ -5,10 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 
 import br.edu.up.testeequalidesoft.servico.Calcula;
+import br.edu.up.testeequalidesoft.servico.Delta;
 
 
 public class TesteCalc {
-
+	
 	@Test
 	public void deveriaCalcular() {
 		deveriaSomar();
@@ -17,27 +18,38 @@ public class TesteCalc {
 		deveriaDividir();
 		deveriaCalcularUmNumElevadoaPotencia();
 		deveriaCalcularRaizQuadrada();
-		DeveriaCalcularEquacaoDoSegundoGrau();
+		deveriaCalcularEquacaoDoSegundoGrau();
+		//deveriaCalcularPerimetroPoligono();
+		//deveriaCalcularHipotenusaTrianguloRetangulo();
 	}
 	
 	
-	private void DeveriaCalcularEquacaoDoSegundoGrau() {
+	private void deveriaCalcularEquacaoDoSegundoGrau() {
 		// TODO Auto-generated method stub
-		
-			double result = 0;
+		    
+			Delta result = new Delta();
+		    
+			//double result = 0;
 			Calcula c = new Calcula();
-			
+			Object[] input = new Object[3];
+			input[0]= 10;
+			input[1]= 10;
+			input[2]= 2;
 			try {
 				 
-			c.bhask(2, 2, 2);
+			//result.setInput(input);
 				 
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
 			
-			System.out.println("resultado da Potenciação: "+ result);
-			assertEquals(true, result == 4);
+			Object[] prova = result.getResultHypot();
+			
+			//int r = 
+			
+			System.out.println(prova[1]);
+			//assertEquals(true, );
 	}
 
 

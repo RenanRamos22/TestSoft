@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 public class Calcula {
-
+	
 	/*Declaraçãoo dos métodos*/  
 	public int escolha(){
 		Scanner input1 = new Scanner(System.in);
@@ -51,9 +51,15 @@ public class Calcula {
 	public double raiz(double num1) {
 		return Math.sqrt(num1);	
 	}
-	public void bhask(int a, int b, int c) {
-		  new Delta(a,b,c);	
+	
+	public void bhask() {
+		// TODO Auto-generated method stub
+		new Delta();
+        
 	}
+
+
+
 	public void periPoli() {
 		 new Perim();	
 	}
@@ -182,12 +188,17 @@ public class Calcula {
 			else if (opcao == 7) {  
 				System.out.println("---------------------");
 				System.out.println("--- Bhaskara: ---");
-				System.out.println("Digite o valor de A, B e C respectivamente: ");
-		       int a = Integer.parseInt(input.next());
-		       int b = Integer.parseInt(input.next());
-		       int c = Integer.parseInt(input.next());
-
-		       calcula.bhask(a,b,c);
+				 Delta d = new Delta();
+				 
+					System.out.println("Digite o valor de A, B e C respectivamente: ");
+				       int a = Integer.parseInt(input.next());
+				       int b = Integer.parseInt(input.next());
+				       int c = Integer.parseInt(input.next());
+				 d.deltaCalculo(a, b, c);
+		      
+		       
+		        System.out.println("---------------------");
+		        
 				opcao = calcula.escolha();
 			}  
 			else if (opcao == 8) {  
