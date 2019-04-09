@@ -1,7 +1,10 @@
 package br.edu.up.testeequalidesoft.test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
+import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import br.edu.up.testeequalidesoft.servico.Calcula;
@@ -12,6 +15,7 @@ public class TesteCalc {
 	
 	@Test
 	public void deveriaCalcular() {
+		
 		deveriaSomar();
 		deveriaSubtrair();
 		deveriaMultiplicar();
@@ -30,25 +34,33 @@ public class TesteCalc {
 			Delta result = new Delta();
 		    
 			//double result = 0;
-			Calcula c = new Calcula();
+			//Calcula c = new Calcula();
+			
 			Object[] input = new Object[3];
 			input[0]= 10;
 			input[1]= 10;
 			input[2]= 2;
+			Object[] prova = new Object[3];
+			
 			try {
 				 
-			//result.setInput(input);
+			result.setInput(input);
 				 
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
 			
-			Object[] prova = result.getResultHypot();
+			 prova = result.getResultHypot();
+			 
+			Integer a= (Integer) input[0];
+			Integer b= (Integer) input[1];
+			Integer ce=  (Integer) input[2];
+			Double x = (Double) prova[1];
 			
-			//int r = 
+			double r = ((a*(x*x))+((b*x)+(ce)));
 			
-			System.out.println(prova[1]);
+			System.out.println(r+""+""+x);
 			//assertEquals(true, );
 	}
 
@@ -147,7 +159,8 @@ public class TesteCalc {
 
 	private void deveriaSomar() {
 		// TODO Auto-generated method stub
-		int result = 0;
+		
+	int result = 0;
 		Calcula c = new Calcula();
 		
 		try {
@@ -161,6 +174,8 @@ public class TesteCalc {
 		
 		System.out.println("resultado da soma é: "+result);
 		assertEquals(true, result == 2);
+		
+		
 		
 	}
 }
