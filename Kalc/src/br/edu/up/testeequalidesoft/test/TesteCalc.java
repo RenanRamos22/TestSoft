@@ -3,7 +3,7 @@ package br.edu.up.testeequalidesoft.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-
+import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 
@@ -173,7 +173,8 @@ public class TesteCalc {
 		}
 		
 		System.out.println("resultado da soma é: "+result);
-		assertEquals(true, result == 2);
+		//assertEquals(true, result == 2);
+		assertThat(result, is(2));
 		
 		
 		
