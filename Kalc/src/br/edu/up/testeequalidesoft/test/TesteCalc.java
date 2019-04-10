@@ -68,25 +68,28 @@ public class TesteCalc {
 	private void deveriaCalcularRaizQuadrada() {
 		// TODO Auto-generated method stub
 		double result = 0;
+		
+		int input = 2;
+		
 		Calcula c = new Calcula();
 		
 		try {
 			 
-			 result = c.raiz(4);
+			 result =  c.raiz(input);
 			 
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 		
-		double compara = result*result;
-		System.out.println("resultado da divisão é: "+ result);
-		assertEquals(true, compara == 4);
+		int compara = (int) (result*result);
+		System.out.println("A raiz Quadrada de "+input +" é: " + result);
+		assertThat(input, is(compara));
 	}
 
 	private void deveriaCalcularUmNumElevadoaPotencia() {
 		// TODO Auto-generated method stub
-		double result = 0;
+		int result = 0;
 		Calcula c = new Calcula();
 		
 		try {
@@ -99,7 +102,7 @@ public class TesteCalc {
 		}
 		
 		System.out.println("resultado da Potenciação: "+ result);
-		assertEquals(true, result == 4);
+		assertThat(result, is(4));
 	}
 
 	private void deveriaDividir() {
@@ -109,7 +112,7 @@ public class TesteCalc {
 		
 		try {
 			 
-			 result = c.div(3, 2);
+			 result = c.div(3, 0);
 			 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -117,7 +120,7 @@ public class TesteCalc {
 		}
 		
 		System.out.println("resultado da divisão é: "+ result);
-		assertEquals(true, result == 1.5);
+		assertThat(result, is(1.5));
 	}
 
 	private void deveriaMultiplicar() {
@@ -136,7 +139,7 @@ public class TesteCalc {
 		}
 		
 		System.out.println("resultado da multiplicação é: "+result);
-		assertEquals(true, result == 4);
+		assertThat(result, is(4));
 	}
 
 	private void deveriaSubtrair() {
@@ -154,7 +157,7 @@ public class TesteCalc {
 		}
 		
 		System.out.println("resultado da subtração é: "+result);
-		assertEquals(true, result == 0);
+		assertThat(result, is(0));
 	}
 
 	private void deveriaSomar() {

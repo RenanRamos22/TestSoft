@@ -36,8 +36,19 @@ public class Calcula {
 		return num1 - num2;
 	}  
 	public double div(double num1,double num2){
-		 double result = (num1 / num2);
-		 return result;
+		
+		double result = 0;
+		
+		try {
+			 result = (num1 / num2);
+			
+		} catch (ArithmeticException e) {
+			// TODO: handle exception
+			
+			
+		}
+			return result;
+		
 	}  
 	public int mult(int num1, int num2){
 		return num1 * num2;
@@ -45,8 +56,8 @@ public class Calcula {
 	public double basc(int num1, int num2){
 		return num1 * num2;
 	}  
-	public double pot(int num1, int num2){
-		return Math.pow(num1, num2);
+	public int pot(int num1, int num2){
+		return (int) Math.pow(num1, num2);
 	} 
 	public double raiz(double num1) {
 		return Math.sqrt(num1);	
