@@ -18,14 +18,14 @@ public class Perim {
 	public double Perim(int qtdLados, double[] lados) {
 		
 		
-		lerLados(qtdLados,lados);
+		//lerLados(qtdLados,lados);
 		somaPerim();
 		return perimetro;
 	}
 
 	private void somaPerim() {
 		// TODO Auto-generated method stub
-		
+		perimetro = 0;
 		for(double lado : lados) {
 			perimetro += lado;
 		}
@@ -67,7 +67,7 @@ public class Perim {
 
 	public void setLados(double[] lados) {
 		this.lados = lados;
-		//somaPerim();
+		somaPerim();
 	}
 
 	public double getPerimetro() {

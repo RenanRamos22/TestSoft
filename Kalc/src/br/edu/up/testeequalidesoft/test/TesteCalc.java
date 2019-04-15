@@ -25,24 +25,50 @@ public class TesteCalc {
 		deveriaCalcularRaizQuadrada();
 		deveriaCalcularEquacaoDoSegundoGrau();
 		deveriaCalcularPerimetroPoligono();
-		//deveriaCalcularHipotenusaTrianguloRetangulo();
+		deveriaCalcularHipotenusaTrianguloRetangulo();
 	}
 	
 	
-	private void deveriaCalcularPerimetroPoligono() {
-		double result = 0;
-		
+	private void deveriaCalcularHipotenusaTrianguloRetangulo() {
+		// TODO Auto-generated method stub
+double result = 0;
+		int num1= 2;
+		int num2 = 4;
+				
+		Calcula c = new Calcula();
 		
 		try {
 			 
-			double[] lados = {2,2};
+			 result =  c.hip(num1, num2);
+			 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		System.out.println("Hipotenusa: "+ result);
+		assertThat(Math.hypot(num1, num2), is(result));
+		
+	}
+
+
+	private void deveriaCalcularPerimetroPoligono() {
+		
+		double result = 0;
+		Perim p = new Perim();
+		
+		try {
+			 
+			double[] lados;
 			int qtdLados =2;
 			
 			lados = new double[qtdLados ];
-			Perim p = new Perim();
+			lados[0]=4;
+			lados[1]=4;
+			//Perim p = new Perim();
 			
 			p.setQtdLados(qtdLados);
-			p.setLados(lados);
+			p.setLados(lados );
 			
 			p.lerLados(qtdLados, lados);
 			result = p.getPerimetro();
@@ -55,6 +81,7 @@ public class TesteCalc {
 		}
 		
 		System.out.println("Perimetro Teste: "+result);
+		 assertThat(result, is(8.0));
 		
 		
 	}

@@ -73,7 +73,7 @@ public class Calcula {
 	 * public void periPoli() { new Perim(); }
 	 */
 	
-	private double hip(int num1, int num2) {
+	public double hip(int num1, int num2) {
 		
 		return Math.hypot(num1,num2);
 	}
