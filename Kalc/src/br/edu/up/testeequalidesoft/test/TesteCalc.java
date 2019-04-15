@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import br.edu.up.testeequalidesoft.servico.Calcula;
 import br.edu.up.testeequalidesoft.servico.Delta;
+import br.edu.up.testeequalidesoft.servico.Perim;
 
 
 public class TesteCalc {
@@ -23,11 +24,42 @@ public class TesteCalc {
 		deveriaCalcularUmNumElevadoaPotencia();
 		deveriaCalcularRaizQuadrada();
 		deveriaCalcularEquacaoDoSegundoGrau();
-		//deveriaCalcularPerimetroPoligono();
+		deveriaCalcularPerimetroPoligono();
 		//deveriaCalcularHipotenusaTrianguloRetangulo();
 	}
 	
 	
+	private void deveriaCalcularPerimetroPoligono() {
+		double result = 0;
+		
+		
+		try {
+			 
+			double[] lados = {2,2};
+			int qtdLados =2;
+			
+			lados = new double[qtdLados ];
+			Perim p = new Perim();
+			
+			p.setQtdLados(qtdLados);
+			p.setLados(lados);
+			
+			p.lerLados(qtdLados, lados);
+			result = p.getPerimetro();
+			
+			
+			 
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		System.out.println("Perimetro Teste: "+result);
+		
+		
+	}
+
+
 	private void deveriaCalcularEquacaoDoSegundoGrau() {
 		// TODO Auto-generated method stub
 		    
@@ -40,28 +72,13 @@ public class TesteCalc {
 			input[0]= 10;
 			input[1]= 10;
 			input[2]= 2;
-			Object[] prova = new Object[3];
-			
-			try {
+			Object[] retorno = new Object[3];
 				 
 			result.setInput(input);
-				 
-			} catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}
 			
-			 prova = result.getResultHypot();
+			 retorno = result.getResultHypot();
 			 
-			Integer a= (Integer) input[0];
-			Integer b= (Integer) input[1];
-			Integer ce=  (Integer) input[2];
-			Double x = (Double) prova[1];
-			
-			double r = ((a*(x*x))+((b*x)+(ce)));
-			
-			System.out.println(r+""+""+x);
-			//assertEquals(true, );
+			 assertThat(retorno[0], is(20.0));
 	}
 
 
@@ -110,17 +127,15 @@ public class TesteCalc {
 		double result = 0;
 		Calcula c = new Calcula();
 		
-		try {
+		
 			 
 			 result = c.div(3, 0);
 			 
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
 		
+			 System.out.println("");
 		System.out.println("resultado da divisão é: "+ result);
-		assertThat(result, is(1.5));
+		System.out.println("");
+		assertThat(result, is(0.0));
 	}
 
 	private void deveriaMultiplicar() {

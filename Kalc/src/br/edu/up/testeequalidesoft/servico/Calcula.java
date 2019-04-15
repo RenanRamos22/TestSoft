@@ -35,20 +35,17 @@ public class Calcula {
 	public int sub(int num1, int num2){
 		return num1 - num2;
 	}  
-	public double div(double num1,double num2){
+	public  double div(double num1,double num2){
 		
-		double result = 0;
-		
-		try {
-			 result = (num1 / num2);
-			
-		} catch (ArithmeticException e) {
-			// TODO: handle exception
-			
-			
-		}
-			return result;
-		
+	if (num2 != 0) {
+		double result = (num1 / num2);
+		     
+			 return result;
+	}
+	else {
+		System.out.println("Divisão por 0 não existe");
+		return 0;
+	}
 	}  
 	public int mult(int num1, int num2){
 		return num1 * num2;
@@ -71,9 +68,10 @@ public class Calcula {
 
 
 
-	public void periPoli() {
-		 new Perim();	
-	}
+
+	/*
+	 * public void periPoli() { new Perim(); }
+	 */
 	
 	private double hip(int num1, int num2) {
 		
@@ -160,11 +158,16 @@ public class Calcula {
 				num2 = input.nextInt();
 
 				
-				double operacao = calcula.div(num1, num2);  
+				double operacao = calcula.div(num1, num2);
+				if(operacao != 0) {
+				
 				System.out.println("O resultado da divisão é:"+ operacao); 
 				System.out.println("---------------------");
-
 				opcao = calcula.escolha();
+				} else{
+					
+					opcao = calcula.escolha();
+				}
 			}  
 			else if (opcao == 5) {  
 				System.out.println("---------------------");
@@ -215,8 +218,28 @@ public class Calcula {
 			else if (opcao == 8) {  
 				System.out.println("---------------------");
 				System.out.println("--- Perimetro de um Poligono ---");
+			
+				int qtdLados = 0;
+				double[] lados;
+				Scanner read = new Scanner(System.in);
+				
+				System.out.println("Digite a quantidade de lados do poligono:");
+				  qtdLados = read.nextInt();
+				  
+				lados = new double[qtdLados];
+				
+				for(int i = 0;i < qtdLados;i++) {
+					System.out.println("digite o tamaho da reta " +i);
+					lados[i] = read.nextDouble();
+					
+				}
 
-				new Perim();
+				Perim p = new Perim();
+				p.lerLados(qtdLados, lados);
+				
+				double result = p.getPerimetro();
+				
+				System.out.println("O Perimetro é igual a: "+ result);
 				opcao = calcula.escolha();
 			}  
 			else if (opcao == 9) {  
