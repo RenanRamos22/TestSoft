@@ -174,10 +174,10 @@ public class Calcula {
 				System.out.println("^^^ POTENCIACAO:  ^^^");
 
 				//scanner para ler informação da tela    
-				System.out.println("Qual o primeiro numero: ");  
-				num1 = input.nextInt();  
-				System.out.println("Qual o segundo numero: ");  
-				num2 = input.nextInt();
+				System.out.println("Digite o numero que voce deseja calcular: ");  
+				num2 = input.nextInt();  
+				System.out.println("Elevado a potencia de: ");  
+				num1 = input.nextInt();
 
 				double operacao = calcula.pot(num1, num2);  
 				System.out.println("O resultado é:"+ operacao);   
