@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import br.edu.up.testeequalidesoft.servico.Calcula;
 import br.edu.up.testeequalidesoft.servico.Delta;
+import br.edu.up.testeequalidesoft.servico.ExceptionKalc;
 import br.edu.up.testeequalidesoft.servico.Perim;
 
 
@@ -156,12 +157,18 @@ double result = 0;
 		
 		
 			 
-			 result = c.div(3, 0);
+			 try {
+				result = c.div(4, 0);
+				 
+					System.out.println("resultado da divisão é: "+ result);
+					
+			} catch (ExceptionKalc e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+			}
 			 
 		
-			 System.out.println("");
-		System.out.println("resultado da divisão é: "+ result);
-		System.out.println("");
+			
 		assertThat(result, is(0.0));
 	}
 

@@ -35,7 +35,7 @@ public class Calcula {
 	public int sub(int num1, int num2){
 		return num1 - num2;
 	}  
-	public  double div(double num1,double num2){
+	public  double div(double num1,double num2) throws ExceptionKalc {
 		
 	if (num2 != 0) {
 		double result = (num1 / num2);
@@ -43,8 +43,8 @@ public class Calcula {
 			 return result;
 	}
 	else {
-		System.out.println("Divisão por 0 não existe");
-		return 0;
+	 throw new	ExceptionKalc("Divisão por 0 não existe");
+		
 	}
 	}  
 	public int mult(int num1, int num2){
@@ -79,7 +79,7 @@ public class Calcula {
 	}
 
 	// --------------- Metodo principal
-	public static void main (String args[]){ 
+	public static void main  (String args[]){ 
 
 		//criando um objeto c a apartir do metodo calc  
 		Calcula calcula = new Calcula();  
@@ -158,16 +158,23 @@ public class Calcula {
 				num2 = input.nextInt();
 
 				
-				double operacao = calcula.div(num1, num2);
-				if(operacao != 0) {
+				double operacao=0;
 				
-				System.out.println("O resultado da divisão é:"+ operacao); 
-				System.out.println("---------------------");
-				opcao = calcula.escolha();
-				} else{
+				try {
+					operacao = calcula.div(num1, num2);
+					System.out.println("O resultado da divisão é:"+ operacao); 
+					System.out.println("---------------------");
+					opcao = calcula.escolha();
+				} catch (ExceptionKalc e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				
 					
 					opcao = calcula.escolha();
-				}
+				
 			}  
 			else if (opcao == 5) {  
 				System.out.println("---------------------");
